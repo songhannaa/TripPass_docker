@@ -1,0 +1,293 @@
+@charset 'utf-8';
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+html {
+	width: 100vw;
+    height: 100vh;
+    font-family: 'Pretendard-Regular';
+}
+
+
+#wrap{
+    font-family: 'Pretendard-Regular';
+    line-height: 1.3rem;
+
+}
+.chat-banner{
+    background-color: #6366f1;
+    color:#ffffff;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+.match-btn{
+    font-size: 14px;
+    margin-left: 5px;
+    background-color: #4047A6;
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+}
+.nav-bar{
+    background-color: #ededed;
+    width: 4%;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.logo{
+    height: 50px;
+    padding-top: 30%;
+}
+
+.bell{
+    padding-bottom: 30%;
+}
+.sidebar {
+    background-color: #f3f3f3;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar ul{
+    padding: 10% 0 0 10%;
+}
+.sidebar ul li:first-child{
+    font-weight: bold;
+}
+.sidebar ul li{
+    margin-bottom: 7%;
+    color: #5C5C5C;
+    cursor: pointer;
+}
+
+.sidebar ul li:hover{
+    font-weight: bold;
+}
+
+.user{
+    display: flex;
+    padding: 0 0 8% 10%;
+
+}
+.user-name{
+    line-height: 30px;
+    font-weight: bold;
+    color: #27292C;
+    margin-left: 3%;
+    letter-spacing:1px
+}
+
+.info{
+    width: 100%;
+}
+
+.info-area {
+    background-color: #ffffff;
+    display: flex;
+}
+
+.info-container{
+    padding: 2% 2% 0 2%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-info{
+    margin-bottom: 3%; 
+}
+
+.user-title{
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+.user-info-area{
+    background-color: #FAF9FF;
+    padding: 1% 2%;
+    border-radius: 10px;
+    display: flex;
+}
+.user-pic {
+    width: 19%;
+    padding: 1%;
+}
+.user-data-area{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 2% 0;
+}
+
+.user-data-title{
+    display: flex;
+    width: 20%;
+}
+.user-data-name{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 6% 2% 0;
+}
+.trip-plan-title{
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 2% 0 1% 0;
+}
+.user-data-safe{
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.user-check{
+    color: #1478ED;
+}
+.user-data-safe img{
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+
+}
+.user-pic img{
+    width: 180px;
+    height: 180px;
+    border-radius: 6.74306px;
+}
+
+.user-profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 6.74306px;
+}
+
+.plan-list li{
+    margin-bottom: 1%;
+}
+.plan-tile{
+    margin-left: 2%;
+    color: #6f6f6f;
+}
+
+.user-personal-data,
+.user-about-data{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 2% 2% 0 2%;
+}
+
+.user-personal-title{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.user-personal-list{
+    margin: 3% 0;
+}
+.user-personal-list li:nth-child(odd){
+    margin-bottom: 2%;
+}
+
+.user-personal-list li:nth-child(even){
+    margin-left: 2%;
+    margin-bottom: 3%;
+    font-size: 1.0rem;
+    display: flex;
+}
+
+.user-personal-obj{
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.check_right{
+    margin-right: 5%;
+}
+
+#check_btn{
+    margin-right: 5px;
+}
+
+input[type='checkbox']{
+    display: none;
+}
+
+.checkbox_icon::before{
+    content:'';
+    display: block;
+    margin-right: 8px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border: 1px solid #9da3a5;
+    box-sizing:border-box;
+    position: relative;
+    cursor: pointer;
+}
+  
+.checkbox_label input:checked + .checkbox_icon::before{
+    transition: all 0.15s ease;
+    background: url(https://intranet.adef.co.kr/asset/images/ic_check.png) #6366f1
+      no-repeat center;;
+    border:none;
+}
+
+.checkbox_label{
+    font-size: 1.0rem;
+    display: flex;
+    margin-right: 10%;
+}
+
+.user-personal-title{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.user-about-list{
+    margin: 3% 2%;
+}
+
+.user-about-list li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 3%;
+}
+
+.user-about-list img{
+    width: 35px;
+    height: 35px;
+    margin-right: 3%;
+}
+
+.user-age,
+.user-gender{
+    font-size: 1.2rem;
+}
+
+.user-tag-list{
+    display: flex;
+}
+
+.user-tag-list li{
+    margin-right: 3%;
+    padding: 5px 10px;
+    background-color: #ebebeb;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}

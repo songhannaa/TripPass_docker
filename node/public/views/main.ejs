@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TripPass</title>
+  <link rel="stylesheet" href="main.css" type="text/css">
+  <link rel="stylesheet" href="reset.css" type="text/css">
+</head>
+<body>
+  <div id="wrap">
+    <div class="sidebar">
+        <div class="sidebar-top">
+            <div class="logo">
+                <img src="TripPasslogo.png" alt="">
+                <span>TripPass</span>
+            </div>
+            <div class="newtrip">
+                <a href="">New Trip +</a>
+            </div>
+        </div>
+        <div class="sidebar-bottom">
+            <div class="user">
+                <img src="pic.png" alt="Profile">
+                <div class="user-name">NARUTO</div>
+            </div>
+        </div>
+    </div>
+    <div class="section-center">
+        <div class="banner-container">
+            <img src="not.jpg" alt="배너 이미지">
+            <span><p>퇴사 기념 나홀로 라오스 여행</p></span>
+        </div>
+        <div class="map-container">
+            <div class="map-title">
+                TripPass Map
+            </div>
+            <div class="map-area">
+                <!-- 구글 지도 영역 -->
+                <!-- data 없는 경우 -->
+                <div class="map-alert">
+                    😭 <br>
+                    아직 계획이 없어요! <br>
+                    멋진 계획을 세워볼까요?
+                </div>
+            </div>
+        </div>
+        <div class="mate-container">
+            <div class="mate-title">
+                TripPass Mate
+            </div>
+            <div class="mate-area">
+                <!-- <div class="mate-alert">
+                    아직 메이트가 없어요! <br>
+                    나만의 매칭 메이트를 찾아볼까요?
+                </div> -->
+                <ul class="mate-list">
+                    <li>
+                        <div class="mate-list-title">
+                            <span class="mate-list-sub-title">바르셀로나 맛집 메이트</span>
+                            <span>버튼</span>
+                        </div>
+                        <div class="mate-list-count">
+                            <span>2</span>
+                            <span>mate</span>
+                        </div>
+                        <div class="mate-list-user">
+                            <ul class="mate-list-user-profile">
+                                <li>
+                                    <img src="pic.png" alt="메이트 유저 프로필 사진">
+                                    <span>세영 , </span>
+                                </li>
+                                <li>
+                                    <img src="pic.png" alt="메이트 유저 프로필 사진">
+                                    <span>한나</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mate-list-title">
+                            <span class="mate-list-sub-title">피카소 미술관 UBER</span>
+                            <span>버튼</span>
+                        </div>
+                        <div class="mate-list-count">
+                            <span>2</span>
+                            <span>mate</span>
+                        </div>
+                        <div class="mate-list-user">
+                            <ul class="mate-list-user-profile">
+                                <li>
+                                    <img src="pic.png" alt="메이트 유저 프로필 사진">
+                                    <span>세영 , </span>
+                                </li>
+                                <li>
+                                    <img src="pic.png" alt="메이트 유저 프로필 사진">
+                                    <span>한나</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section-right">
+        <div class="calendar">
+            <div class="calendar-header">
+              <span></span>
+            </div>
+            <div class="calendar-body">
+              <div class="calendar-weekdays">
+                <div>Su</div>
+                <div>Mo</div>
+                <div>Tu</div>
+                <div>We</div>
+                <div>Th</div>
+                <div>Fr</div>
+                <div>Sa</div>
+              </div>
+              <div class="calendar-days">
+
+                <div class="empty"></div>
+
+                <div class="calendar-day" ></div>
+
+              </div>
+            </div>
+          </div>
+        <div class="day-plan">
+            <div class="day-plan-title">DAY 4</div>
+            <!-- <div class="day-plan-alert">
+                오늘의 여행 플랜을<br>
+                시작해 볼까요?
+            </div> -->
+            <!-- 데이터 있는 경우 출력 -->
+            <ul class="day-plan-list">
+                <li>
+                    <span class="day-plan-time">오전 9시</span>
+                    <span class="day-plan-icon">🚍</span>
+                    <span class="day-plan-about">버스 탑승</span>
+                </li>
+                <li>
+                    <span class="day-plan-time">오전 10시</span>
+                    <span class="day-plan-icon">🍝</span>
+                    <span class="day-plan-about">파스타</span>
+                </li>
+                <li>
+                    <span class="day-plan-time">오전 11시</span>
+                    <span class="day-plan-icon">🎨</span>
+                    <span class="day-plan-about">피카소 미술관</span>
+                </li> 
+            </ul>
+            <div class="day-plan-all">
+                <a href="">여행 일정 전체 보기 ></a>
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

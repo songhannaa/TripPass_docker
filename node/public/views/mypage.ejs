@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>여행 계획 챗봇</title>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/mypage.css" type="text/css">
+</head>
+<body>
+<div class="chat-banner">
+    <span>🗽 나만의 여행 계획을 만들어요! </span>
+    <a href="/chat" class="match-btn">여행 계획 준비하기</a>
+</div>  
+<div id="wrap">
+    <div class="container">
+        <div class="nav-bar">
+            <div class="logo">
+                <a href="">
+                    <img src="../image/TripPasslogo.png" alt="트립패스로고">
+                </a>
+            </div>
+            <div class="bell">
+                <a href="">
+                    <img src="../image/bell.png" alt="알림 아이콘">
+                </a>
+            </div>
+        </div>
+        <div class="info">
+            <div class="info-area">
+                <div class="sidebar">
+                    <ul>
+                        <li>마이 페이지</li>
+                        <li>마이 트립</li>
+                    </ul>
+                    <div class="user">
+                        <div class="user-profile">
+                            <img src="data:image/png;base64,<%= user.profile %>" alt="사용자 사진">
+                        </div>
+                        <div class="user-name"><%= user.name %></div>
+                    </div>
+                </div> 
+                <div class="info-container">
+                    <div class="user-info">
+                        <div class="user-title">회원 정보</div>
+                        <div class="user-info-area">
+                            <div class="user-pic">
+                                <img src="data:image/png;base64,<%= user.profile %>" alt="">
+                            </div>
+                            <div class="user-data-area">
+                                <div class="user-data-title">
+                                    <div class="user-data-name">
+                                        <%= user.name %>
+                                    </div>
+                                    <div class="user-data-safe">
+                                        본인 인증&nbsp;<span class="user-check">완료</span>
+                                        <img src="../image/check.png" alt="check">
+                                    </div>
+                                </div>
+                                <div class="trip-plan-title">
+                                    여행 기록
+                                </div>
+                                <ul class="plan-list">
+                                    <li>
+                                        <a href="">
+                                            <span class="plan-date">2024-03-02 ~ 2024-03-12</span>
+                                            <span class="plan-tile">사스케랑 탈주 닌자 여행</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span class="plan-date">2024-04-02 ~ 2024-04-12</span>
+                                            <span class="plan-tile">세영이랑 미나리 삼겹살 여행</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-personal">
+                        <div class="user-title">여행 성향 분석</div>
+                        <div class="user-info-area">
+                            <div class="user-personal-data">
+                                <div class="user-personal-title">
+                                    PERSONALITY
+                                </div>
+                                <ul class="user-personal-list">
+                                    <li>
+                                        <span class="user-personal-obj">💵 여행 경비</span>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox_label">
+                                            <input type="checkbox"  >
+                                            <span class="checkbox_icon"></span>
+                                            <span class="checkbox_text">넉넉한게 최고!</span>
+                                        </label>
+                                        <label class="checkbox_label">
+                                            <input type="checkbox"  >
+                                            <span class="checkbox_icon"></span>
+                                            <span class="checkbox_text">저 거지입니다</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <span class="user-personal-obj">🚥 교통</span>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox_label">
+                                            <input type="checkbox"  >
+                                            <span class="checkbox_icon"></span>
+                                            <span class="checkbox_text">무조건 택시타</span>
+                                        </label>
+                                        <label class="checkbox_label">
+                                            <input type="checkbox"  >
+                                            <span class="checkbox_icon"></span>
+                                            <span class="checkbox_text">합승 OK</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <span class="user-personal-obj">🍽 식사</span>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox_label">
+                                            <input type="checkbox"  >
+                                            <span class="checkbox_icon"></span>
+                                            <span class="checkbox_text">웨이팅 쌉가능</span>
+                                        </label>
+                                        <label class="checkbox_label">
+                                            <input type="checkbox"  >
+                                            <span class="checkbox_icon"></span>
+                                            <span class="checkbox_text">아무거나 먹자.(아버지톤)</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <span class="user-personal-obj">⏰ 시간</span>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox_label">
+                                            <input type="checkbox"  >
+                                            <span class="checkbox_icon"></span>
+                                            <span class="checkbox_text">시간은 금이다</span>
+                                        </label>
+                                        <label class="checkbox_label">
+                                            <input type="checkbox"  >
+                                            <span class="checkbox_icon"></span>
+                                            <span class="checkbox_text">잠만보</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="user-about-data">
+                                <div class="user-personal-title">
+                                    ABOUT
+                                </div>
+                                <ul class="user-about-list">
+                                    <li>
+                                        <img src="../image/age.png" alt="사용자 나이 아이콘">
+                                        <span class="user-age"><%= user.age %></span>
+                                    </li>
+                                    <li>
+                                        <img src="../image/gender.png" alt="사용자 성별 아이콘">
+                                        <span class="user-gender"><%= user.gender %></span>
+                                    </li>
+                                </ul>
+                                <ul class="user-tag-list">
+                                    <li>
+                                        # 닌자
+                                    </li>
+                                    <li>
+                                        # 호카게
+                                    </li>
+                                    <li>
+                                        # 나선환
+                                    </li>
+                                    <li>
+                                        # 구미호
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

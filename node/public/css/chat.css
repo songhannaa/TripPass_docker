@@ -1,0 +1,315 @@
+@charset 'utf-8';
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+html {
+	width: 100vw;
+    height: 100vh;
+    font-family: 'Pretendard-Regular';
+}
+
+
+#wrap{
+    font-family: 'Pretendard-Regular';
+    line-height: 1.3rem;
+
+}
+.chat-banner{
+    background-color: #6366f1;
+    color:#ffffff;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+.match-btn{
+    font-size: 14px;
+    margin-left: 5px;
+    background-color: #4047A6;
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+}
+.nav-bar{
+    background-color: #ededed;
+    width: 4%;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.logo{
+    height: 50px;
+    padding-top: 30%;
+}
+
+.bell{
+    padding-bottom: 30%;
+}
+.sidebar {
+    background-color: #f3f3f3;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar ul{
+    padding: 10% 0 0 10%;
+}
+.sidebar ul li:first-child{
+    font-weight: bold;
+}
+.sidebar ul li{
+    margin-bottom: 7%;
+    color: #5C5C5C;
+    cursor: pointer;
+}
+
+.sidebar ul li:hover{
+    font-weight: bold;
+}
+
+.user{
+    display: flex;
+    padding: 0 0 8% 10%;
+    cursor: pointer;
+}
+.user-name{
+    line-height: 30px;
+    font-weight: bold;
+    color: #27292C;
+    margin-left: 3%;
+    letter-spacing:1px
+}
+
+.chat{
+    width: 100%;
+}
+.chat-tile {
+    border-bottom: 1px solid #ccc;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 1%;
+}
+.chat-tile span{
+    font-weight: bold;
+}
+
+.chat-area {
+    background-color: #ffffff;
+    display: flex;
+    height: 85vh;
+}
+.chat-message{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 85%;
+}
+.chat-messages {
+    overflow-y: scroll;
+    height: 100%;
+    scrollbar-width: thin; 
+}
+
+.scroll-top {
+    display: flex;
+    justify-content: center;
+}
+.scroll-top a{
+    width: 30px;
+    border: 1px solid #ececec;
+    box-shadow: 2px 1px 3px 0px #e9e9e9;
+    border-radius: 10px;
+    padding: 7px 13px;
+    text-align: center;
+}
+
+.scroll-top a:hover{
+    background-color: #cccfff;
+    border:1px solid #cccfff;
+    color: #fff;
+}
+
+.chat-bubble-user{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 10px 50px 0;
+}
+
+.user-chat {
+    border: 1px solid #ccc;
+    border-right: 5px solid #6366f1;
+    border-radius: 5px;
+    display: inline-block;
+    max-width: 40%;
+    padding: 1% 2%;
+    margin-right: 10px;
+    white-space: pre-wrap;
+}
+
+.user-chat ul{
+    display: flex;
+}
+
+.user-chat ul li{
+    padding-bottom: 1%;
+}
+
+.user-profile{
+    display:flex;
+    align-items: flex-end;
+}
+
+.chat-bubble-bot{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 50px 10px;   
+}
+
+.public{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 50px 10px; 
+}
+.public-message{
+    display: flex;
+    margin: 2% 0 1% 0;
+}
+.bot-chat-public{
+    border: 1px solid #ccc;
+    border-left: 5px solid #b363f1;
+    border-radius: 5px;
+    max-width: 80%;
+    padding: 1% 2%;
+    margin-left: 10px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+}
+
+.bold-text-world,
+.bold-text-name{
+    display: contents;
+    font-weight: 600;
+}
+
+.bold-text-world{
+    color: #b363f1;
+}
+
+.bold-text-name{
+    color: #6366f1;
+}
+
+.chat-btn{
+    display: flex;
+    margin-left: 4%;
+}
+
+.chat-btn form{
+    margin-right: 1%;
+}
+.btn-food,
+.btn-tour,
+.btn-etc,
+.btn-other,
+.btn-insert{
+    border: 1px solid #ececec;
+    box-shadow: 2px 1px 3px 0px #e9e9e9;
+    border-radius: 10px;
+    padding: 7px 13px;
+    margin-right: 1%;
+    cursor: pointer;
+}
+.btn-other,
+.btn-insert{
+    background-color: #fff;
+    width:100%;
+    margin-right: 20%;
+}
+
+.btn-other:hover,
+.btn-insert:hover,
+.btn-food:hover,
+.btn-tour:hover,
+.btn-etc:hover{
+    background-color: #cccfff;
+    border:1px solid #cccfff;
+    color: #fff;
+}
+.bot-chat {
+    border: 1px solid #ccc;
+    border-left: 5px solid #b363f1;
+    border-radius: 5px;
+    max-width: 60%;
+    padding: 1% 2%;
+    margin-left: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    white-space: pre-wrap;
+}
+.bot-chat img{
+    width: 400px;
+    margin-top: 20px;
+}
+.bot-profile{
+    display:flex;
+    align-items: flex-end;
+}
+
+.input-area form{
+    display: flex;
+    width: 100%;
+    padding: 1% 0;
+    justify-content: center;
+}
+
+#message-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 89%;
+}
+
+#message-input:focus{
+    outline: none;
+}
+
+.send-button {
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 5%;
+}
+
+.message-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.user-profile img,
+.bot-profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 6.74306px;
+}
+
+.chat-messages {
+    overflow-y: scroll;
+    height: 100%;
+    scrollbar-width: thin;
+    scroll-behavior: smooth; /* 추가된 부분 */
+}
