@@ -13,7 +13,6 @@ WORKDIR '/root/tp'
 RUN npm install
 RUN npm install -g nodemon
 
-
 # 애플리케이션이 실행될 포트 설정
 EXPOSE 8000 8500
 
