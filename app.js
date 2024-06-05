@@ -43,7 +43,7 @@ app.get('/chat', async (req, res) => {
         const data = response.data.response;
         const hideButtons = req.session.hideButtons || false;
 
-        const user_response = await axios.get(`${FAST2}getuser/1`); 
+        const user_response = await axios.get(`${FAST1}getuser/1`); 
         const user_data = user_response.data.response;
         res.render('chat.ejs', { messages: data, hideButtons, user: user_data });
     } catch (error) {
@@ -98,7 +98,7 @@ app.post('/other', async (req, res) => {
 
 app.get('/mypage', async (req, res) => {
     try {
-        const response = await axios.get(`${FAST2}getuser/1`); 
+        const response = await axios.get(`${FAST1}getuser/1`); 
         const data = response.data.response; 
         res.render('mypage.ejs', { user: data });
     } catch (error) {
