@@ -36,8 +36,12 @@ html {
     align-items: center;
 }
 
+.logo a{
+  display: flex;
+  align-items: center;
+}
 .logo img{
-    margin-right: 5%;
+    margin-right: 10%;
 }
 .logo span{
     font-size: 1.8rem;
@@ -98,6 +102,16 @@ html {
     height: 100%;
     object-fit:cover;
 }
+.overlay {
+  display: none; /* 기본적으로 오버레이를 숨깁니다. */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명한 검은색 */
+  z-index: 999; /* 팝업보다 낮고, 다른 모든 요소보다 높은 값으로 설정 */
+}
 
 .banner-container span{
     position: absolute;
@@ -156,7 +170,16 @@ html {
     display: flex;
     height: 81%;
     width: 100%;
+    background-color: #FAF9FF;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5rem;
     /* overflow-x: scroll; */
+}
+.mate-alert{
+  font-weight: bold;
+  color: #ccc;
+  text-align: center;
 }
 
 .mate-list{
@@ -220,30 +243,29 @@ html {
     align-items: center;
 }
 /* section-right */
-.section-right{
+/* .right{
     width: 20%;
     border-radius: 16px;
-}
+} */
 .calendar {
+    justify-content: space-between;
     display: flex;
     flex-direction: column;
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 0 5px 5px rgba(58, 58, 58, 0.032);
-    overflow: hidden;
-    margin-top: 1px;
-    margin-left: 10px;
-    height: 30%;
+    margin-bottom: 6%;
   }
   
   .calendar-header {
     text-align: center;
     padding: 16px;
     font-size: 1.5em;
+    font-weight: bold;
   }
   
   .calendar-body {
-    padding: 16px;
+    padding: 0 16px;
   }
   
   .calendar-weekdays,
@@ -254,7 +276,8 @@ html {
   }
   
   .calendar-day:hover {
-    background-color: #faf9ff;
+    background-color: #525ace;
+    color: #fff;
   }
   .calendar-weekdays div {
     text-align: center;
@@ -264,12 +287,196 @@ html {
   
   .calendar-days div {
     text-align: center;
-    padding: 8px 0;
+    padding: 4px 0;
     min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-
-
-.day-plan{
-    background-color: #FAF9FF;
-    height: 58%;
-}
+  
+  .calendar-days .empty {
+  }
+  .middleall {
+    width: 57%;
+  }
+  .right {
+    width: 20%;
+    flex-direction: column;
+    height: 100%;
+  }
+  .right-bottom {
+    display: flex;
+    background-color: #faf9ff;
+    height: 60%;
+    border-radius: 20px;
+    flex-direction: column;
+    overflow-y: scroll;
+    line-height: 30px;
+    scrollbar-width: thin;
+  }
+  .right-bottom-nothing {
+    color: #ccc; /* 색상 변경 */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 200px;
+  }
+  .right-bottom-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: #474747;
+  }
+  .planDiv {
+    display: flex;
+    position: absolute;
+  }
+  .plantime {
+    display: flex;
+    margin-left: 20px;
+    color: #a1a1a1;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+  .planplace {
+    display: flex;
+    margin-left: 20px;
+    color: #474747;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0.5%;
+  }
+  .plannote {
+    margin-left: 40px;
+    display: flex;
+    color: #a1a1a1;
+    font-size: 16px;
+    font-weight: normal;
+  }
+  #openPopup {
+    display: flex;
+    text-align: center;
+    color: #faf9ff;
+    justify-content: center; /* 요소를 수평으로 가운데 정렬 */
+    background-color: #525ace;
+    width: 80%;
+    border-radius: 20px;
+    font-size: 20px;
+    border: none; /* 기본 버튼 스타일 제거 */
+    cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능함을 나타냄 */
+  }
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #faf9ff;
+    padding: 20px 63px;
+    z-index: 1000;
+    border-radius: 20px;
+  }
+  
+  .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .trip-data {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .trip-data p {
+    margin: 0;
+    width: 25%;
+    text-align: center;
+    margin-right: 10px; /* p 태그와 input 사이의 간격 */
+  }
+  
+  .trip-data input[type="text"],
+  .trip-data input[type="date"],
+  .trip-data input[type="file"] {
+    flex: 1; /* input 박스가 가능한 넓게 차지하도록 설정 */
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+  }
+  
+  .popup-content {
+    margin-bottom: 20px;
+  }
+  .popup-content h2 {
+    font-size: 30px;
+    padding: 20px;
+    font-weight: bold;
+  }
+  
+  .popup-buttons {
+    text-align: center;
+  }
+  
+  .popup-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .image-preview {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+  }
+  .trip-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    letter-spacing: 2px;
+  }
+  
+  .Map-title {
+    color: #9aa2ac; /* 색상 변경 */
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    line-height: 40px;
+  }
+  .Mate-title {
+    color: #9aa2ac; /* 색상 변경 */
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    line-height: 35px;
+  }
+  
+  #save {
+    background-color: #525ace;
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 10px;
+  }
+  #cancel {
+    display: none;
+    color: #fff;
+  }
+  .check {
+    font-size: 0.8rem;
+  }

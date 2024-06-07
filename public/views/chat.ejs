@@ -15,7 +15,7 @@
     <div class="container">
         <div class="nav-bar">
             <div class="logo">
-                <a href="">
+                <a href="/main">
                     <img src="../image/TripPasslogo.png" alt="트립패스로고">
                 </a>
             </div>
@@ -27,12 +27,12 @@
         </div>
         <div class="chat">
             <div class="chat-tile">
-                <span>✈️ 퇴사 기념 나홀로 라오스 여행</span>
+                <span><%= trip.title%></span>
             </div>
             <div class="chat-area">
                 <div class="sidebar">
                     <ul>
-                        <li>라오스로 떠나는 <%= user.name %>님!</li>
+                        <li>반가워요! <%= user.name %>님! ...</li>
                     </ul>
                     <div class="user">
                         <div class="user-profile">
@@ -46,7 +46,7 @@
                         <div class="public">
                             <div class="public-message">
                                 <div class="bot-profile"><img src="../image/chatbot.png" alt="챗봇 사진"></div>
-                                <div class="bot-chat-public"><span class="bold-text-world">라오스</span>로 떠나는 <span class="bold-text-name"><%= user.name %></span>님!<br/><br/>여행 챗봇 🤖세영이🤖 입니다<br/><br/>계획을 함께 만들어볼까요?🙏<br/>원하시는 카테고리를 선택해주세요!</div>
+                                <div class="bot-chat-public"><span class="bold-text-world">반가워요!<br></span><span class="bold-text-name"><%= user.name %></span>님!<br/><br/>여행 챗봇 🤖세영이🤖 입니다<br/><br/>여행 계획을 함께 만들어볼까요?🙏<br/>원하시는 카테고리를 선택해주세요!<br><br>그치만 지금은 대화만 가능하니까 그냥 입력해주세요!</div>
                             </div>
                             <div class="chat-btn">
                                 <div class="btn-food">맛집 🍽</div>

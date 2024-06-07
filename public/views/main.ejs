@@ -4,32 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TripPass</title>
-  <link rel="stylesheet" href="main.css" type="text/css">
-  <link rel="stylesheet" href="reset.css" type="text/css">
+  <link rel="stylesheet" href="../css/main.css" type="text/css">
+  <link rel="stylesheet" href="../css/reset.css" type="text/css">
 </head>
 <body>
   <div id="wrap">
+    <div id="overlay" class="overlay"></div>
     <div class="sidebar">
         <div class="sidebar-top">
             <div class="logo">
-                <img src="TripPasslogo.png" alt="">
-                <span>TripPass</span>
+                <a href="/main">
+                    <img src="../image/TripPasslogo.png" alt="트립패스로고">
+                    <span>TripPass</span>
+                </a>
             </div>
-            <div class="newtrip">
-                <a href="">New Trip +</a>
-            </div>
+            <button class="newtrip" id="openPopup">
+                New Trip +
+            </button>
         </div>
         <div class="sidebar-bottom">
             <div class="user">
-                <img src="pic.png" alt="Profile">
-                <div class="user-name">NARUTO</div>
+                <img src="data:image/png;base64,<%= user.profile %>" alt="사용자 사진">
+                <div class="user-name"><a href="/mypage"><%= user.name %></a></div>
             </div>
         </div>
     </div>
     <div class="section-center">
         <div class="banner-container">
-            <img src="not.jpg" alt="배너 이미지">
-            <span><p>퇴사 기념 나홀로 라오스 여행</p></span>
+            <img src="<%= imageUrl %>" alt="배너 이미지">
+            <span><p><%= bannerStr %></p></span>
         </div>
         <div class="map-container">
             <div class="map-title">
@@ -40,8 +43,8 @@
                 <!-- data 없는 경우 -->
                 <div class="map-alert">
                     😭 <br>
-                    아직 계획이 없어요! <br>
-                    멋진 계획을 세워볼까요?
+                    아직 구글맵 연동을 못헀어요! <br>
+                    조금만 기다려 주세요!
                 </div>
             </div>
         </div>
@@ -50,15 +53,16 @@
                 TripPass Mate
             </div>
             <div class="mate-area">
-                <!-- <div class="mate-alert">
+                <div class="mate-alert">
+                    😭 <br>
                     아직 메이트가 없어요! <br>
                     나만의 매칭 메이트를 찾아볼까요?
-                </div> -->
-                <ul class="mate-list">
+                </div>
+                <!-- <ul class="mate-list">
                     <li>
                         <div class="mate-list-title">
                             <span class="mate-list-sub-title">바르셀로나 맛집 메이트</span>
-                            <span>버튼</span>
+                            <span></span>
                         </div>
                         <div class="mate-list-count">
                             <span>2</span>
@@ -67,11 +71,11 @@
                         <div class="mate-list-user">
                             <ul class="mate-list-user-profile">
                                 <li>
-                                    <img src="pic.png" alt="메이트 유저 프로필 사진">
+                                    <img src="../image/pic.png" alt="메이트 유저 프로필 사진">
                                     <span>세영 , </span>
                                 </li>
                                 <li>
-                                    <img src="pic.png" alt="메이트 유저 프로필 사진">
+                                    <img src="../image/pic.png" alt="메이트 유저 프로필 사진">
                                     <span>한나</span>
                                 </li>
                             </ul>
@@ -80,7 +84,7 @@
                     <li>
                         <div class="mate-list-title">
                             <span class="mate-list-sub-title">피카소 미술관 UBER</span>
-                            <span>버튼</span>
+                            <span></span>
                         </div>
                         <div class="mate-list-count">
                             <span>2</span>
@@ -89,74 +93,218 @@
                         <div class="mate-list-user">
                             <ul class="mate-list-user-profile">
                                 <li>
-                                    <img src="pic.png" alt="메이트 유저 프로필 사진">
+                                    <img src="../image/pic.png" alt="메이트 유저 프로필 사진">
                                     <span>세영 , </span>
                                 </li>
                                 <li>
-                                    <img src="pic.png" alt="메이트 유저 프로필 사진">
+                                    <img src="../image/pic.png" alt="메이트 유저 프로필 사진">
                                     <span>한나</span>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     
-                </ul>
+                </ul> -->
             </div>
         </div>
     </div>
-    <div class="section-right">
+    <div class ="right">
         <div class="calendar">
-            <div class="calendar-header">
-              <span></span>
+          <div class="calendar-header">
+            <span><%= monthNames[currentMonth] %></span>
+          </div>
+          
+          <div class="calendar-body">
+            <div class="calendar-weekdays">
+              <div>Su</div>
+              <div>Mo</div>
+              <div>Tu</div>
+              <div>We</div>
+              <div>Th</div>
+              <div>Fr</div>
+              <div>Sa</div>
             </div>
-            <div class="calendar-body">
-              <div class="calendar-weekdays">
-                <div>Su</div>
-                <div>Mo</div>
-                <div>Tu</div>
-                <div>We</div>
-                <div>Th</div>
-                <div>Fr</div>
-                <div>Sa</div>
-              </div>
-              <div class="calendar-days">
-
-                <div class="empty"></div>
-
-                <div class="calendar-day" ></div>
-
-              </div>
+            <div class="calendar-days">
+              <% for(let i = 0; i < firstDayOfMonth; i++) { %>
+              <div class="empty"></div>
+              <% } %> <% for(let i = 1; i <= lastDateOfMonth; i++) { %>
+              <div class="calendar-day" data-day="<%= i %>"><%= i %></div>
+              <% } %>
             </div>
           </div>
-        <div class="day-plan">
-            <div class="day-plan-title">DAY 4</div>
-            <!-- <div class="day-plan-alert">
-                오늘의 여행 플랜을<br>
-                시작해 볼까요?
-            </div> -->
-            <!-- 데이터 있는 경우 출력 -->
-            <ul class="day-plan-list">
-                <li>
-                    <span class="day-plan-time">오전 9시</span>
-                    <span class="day-plan-icon">🚍</span>
-                    <span class="day-plan-about">버스 탑승</span>
-                </li>
-                <li>
-                    <span class="day-plan-time">오전 10시</span>
-                    <span class="day-plan-icon">🍝</span>
-                    <span class="day-plan-about">파스타</span>
-                </li>
-                <li>
-                    <span class="day-plan-time">오전 11시</span>
-                    <span class="day-plan-icon">🎨</span>
-                    <span class="day-plan-about">피카소 미술관</span>
-                </li> 
-            </ul>
-            <div class="day-plan-all">
-                <a href="">여행 일정 전체 보기 ></a>
-            </div>
         </div>
-    </div>
-  </div>
-</body>
+    
+        <div class="right-bottom">
+          <div class="right-bottom-nothing">오늘의 여행을<br> 시작해볼까요?</div> 
+          </div>
+    
+        <div id="popup" class="popup">
+          <div class="popup-close"> X </div>
+          <div class="popup-content">
+            <h2 align="center">New Trip</h2>
+            <div class="trip-data">
+              <p>Title</p>
+              <input type="text" id="title" placeholder="제목" />
+            </div>
+            <div class="trip-data">
+              <p>Start Date</p>
+              <input type="date" id="startdate" />
+            </div>
+            <div class="trip-data">
+              <p>End Date</p>
+              <input type="date" id="enddate" />
+            </div>
+            <div class="trip-data">
+            <p>Image</p><input type="file" id="image" accept="image/*" />
+    
+            </div>
+            <div class="image-preview"></div>
+            <canvas id="imageCanvas" width="400" height="300"></canvas>
+          </div>
+          <div class="popup-buttons">
+            <button id="save">저장</button>
+            <button id="cancel">취소</button>
+          </div>
+          </div>    
+        </div>
+    </body>
+    <script>
+        const startDateInput = document.getElementById("startdate");
+        const endDateInput = document.getElementById("enddate");
+        document.querySelectorAll(".calendar-day").forEach(day => {
+          day.addEventListener("click", function() {
+              
+            const day = Number(this.getAttribute("data-day"));
+            const date = new Date(<%=currentYear%>, <%=currentMonth%>, day +1);
+            const selectDate = date.toISOString().split('T')[0]; // 'YYYY-MM-DD' 형식으로 변환
+            console.log(selectDate);
+            fetch(`http://<%=mylocalhost%>:3500/getTripPlanSQL?select_date=${selectDate}`)
+              .then(response => response.json())
+              .then(data => {
+                const rightBottom = document.querySelector(".right-bottom");
+                rightBottom.innerHTML = "<div class= 'right-bottom-title'>Today's Trip</div>"; // 기존 내용을 지우고
+                if (data.result && data.result.length > 0) {
+                  data.result.forEach(plan => {
+                    const planDiv = document.createElement("div");
+                    const hours = Math.floor(plan.triptime/3600).toString().padStart(2, '0');
+                    const minutes = ((plan.triptime%3600) / 60).toString().padStart(2, '0');
+                    planDiv.innerHTML = `
+                <div class = 'plantime'>
+                  ${hours}:${minutes}
+                </div>
+                <div class = 'planplace'>
+                  <span class = "check">✔ &nbsp; </span>  ${plan.place} <br>
+                </div>
+                <div class = "plannote">- ${plan.note} </div> 
+              `;
+                    rightBottom.appendChild(planDiv);
+                  });
+                } else {
+                  rightBottom.innerHTML = "<div class='right-bottom-nothing'>오늘의 여행을<br> 시작해볼까요?</div>";
+                }
+              })
+              .catch(error => {
+              });
+          });
+        });
+
+      const overlay = document.getElementById("overlay");
+      const openPopupButton = document.getElementById("openPopup");
+      const popup = document.getElementById("popup");
+      const closePopupButton = document.querySelector(".popup-close");
+      const saveButton = document.getElementById("save");
+      const cancelButton = document.getElementById("cancel");
+      const titleInput = document.getElementById("title");
+      const imageInput = document.getElementById("image");
+      const imagePreview = document.querySelector(".image-preview");
+      const canvas = document.getElementById("imageCanvas");
+      const ctx = canvas.getContext("2d");
+
+      openPopupButton.addEventListener("click", () => {
+        overlay.style.display = "block";
+        popup.style.display = "block";
+        imagePreview.innerHTML = ""; // 이미지 미리보기 초기화
+      });
+
+      closePopupButton.addEventListener("click", () => {
+        popup.style.display = "none";
+        overlay.style.display = "none";
+      });
+
+      cancelButton.addEventListener("click", () => {
+        popup.style.display = "none";
+        overlay.style.display = "none";
+      });
+
+      imageInput.addEventListener("change", function (e) {
+        const file = e.target.files[0];
+        if (file && file.type.startsWith("image/")) {
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            const image = new Image();
+            image.onload = function () {
+              ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+            };
+            image.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        } else {
+          imagePreview.innerHTML = "이미지 파일만 업로드 가능합니다.";
+        }
+      });
+      
+      saveButton.addEventListener("click", () => {
+  const title = titleInput.value;
+  const startDate = startDateInput.value;
+  const endDate = endDateInput.value;
+  const imageFile = imageInput.files[0];
+  
+  if (imageFile) {
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("startdate", startDate);
+    formData.append("enddate", endDate);
+    formData.append("banner", imageFile);
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://<%=mylocalhost%>:3500/insertUserTripSQL");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          const data = JSON.parse(xhr.responseText);
+          alert("여행 정보 저장 성공.");
+          popup.style.display = "none";
+          location.reload();
+        } else {
+          alert("여행 정보 저장에 실패했습니다.");
+        }
+      }
+    };
+    xhr.send(formData);
+  } else {
+    const data = {
+      title: title,
+      startdate: startDate,
+      enddate: endDate
+    };
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://<%=mylocalhost%>:3500/insertUserTripSQL");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          const responseData = JSON.parse(xhr.responseText);
+          alert("여행 정보 저장 성공.");
+          popup.style.display = "none";
+          location.reload();
+        } else {
+          alert("여행 정보 저장에 실패했습니다.");
+        }
+      }
+    };
+    xhr.send(JSON.stringify(data));
+  }
+});
+  </script>
 </html>

@@ -1,7 +1,6 @@
 {
   "name": "node",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +20,9 @@
     "express-session": "^1.18.0",
     "morgan": "^1.10.0",
     "node-fetch": "^3.3.2",
-    "path": "^0.12.7"
-  }
+    "path": "^0.12.7",
+    "pm2": "^5.4.0",
+    "xhr": "^2.6.0"
+  },
+  "description": ""
 }

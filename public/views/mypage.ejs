@@ -15,7 +15,7 @@
     <div class="container">
         <div class="nav-bar">
             <div class="logo">
-                <a href="">
+                <a href="/main">
                     <img src="../image/TripPasslogo.png" alt="트립패스로고">
                 </a>
             </div>
@@ -36,7 +36,7 @@
                         <div class="user-profile">
                             <img src="data:image/png;base64,<%= user.profile %>" alt="사용자 사진">
                         </div>
-                        <div class="user-name"><%= user.name %></div>
+                        <div class="user-name"><a href="/mypage"><%= user.name %></a></div>
                     </div>
                 </div> 
                 <div class="info-container">
@@ -62,14 +62,8 @@
                                 <ul class="plan-list">
                                     <li>
                                         <a href="">
-                                            <span class="plan-date">2024-03-02 ~ 2024-03-12</span>
-                                            <span class="plan-tile">사스케랑 탈주 닌자 여행</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <span class="plan-date">2024-04-02 ~ 2024-04-12</span>
-                                            <span class="plan-tile">세영이랑 미나리 삼겹살 여행</span>
+                                            <span class="plan-date"><%= trip.startdate%> ~ <%= trip.enddate%></span>
+                                            <span class="plan-tile"><%= trip.title%></span>
                                         </a>
                                     </li>
                                 </ul>
@@ -162,16 +156,16 @@
                                 </ul>
                                 <ul class="user-tag-list">
                                     <li>
-                                        # 닌자
+                                        # 귀살대
                                     </li>
                                     <li>
-                                        # 호카게
+                                        # 탈모샴푸
                                     </li>
                                     <li>
-                                        # 나선환
+                                        # 머머리
                                     </li>
                                     <li>
-                                        # 구미호
+                                        # 남성만
                                     </li>
                                 </ul>
                             </div>
