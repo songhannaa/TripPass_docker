@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>Trippass</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TripPass</title>
+  <link rel="stylesheet" href="../public/css/reset.css" type="text/css">
+  <link rel="stylesheet" href="../public/css/main.css" type="text/css">
 </head>
 <body>
-    <h1>server on</h1>
-</body>
+  <div id="wrap">
+    <div id="overlay" class="overlay"></div>
+    <div class="sidebar">
+        <div class="sidebar-top">
+            <div class="logo">
+                <a href="">
+                    <img src="../public/image/TripPasslogo.png" alt="트립패스로고">
+                    <span>TripPass</span>
+                </a>
+            </div>
+            <button class="newtrip" id="openPopup">
+                New Trip +
+            </button>
+        </div>
+        <div class="sidebar-bottom">
+            <div class="user">
+                <div class="user-name"><a href="">로그인을 진행해주세요</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="section-center-login">
+        <div class="login-box">
+            <div class="login-title">
+                로그인
+            </div>
+            <div id="login-form">
+                <input type="text" class="id" placeholder="아이디를 입력하세요">
+                <input type="password" class="password" placeholder="비밀번호를 입력하세요">
+                <a href="/main" class="login-btn">
+                    로그인
+                </a>
+            </div>
+        </div>
+    </div>
+    </body>
 </html>
