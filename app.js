@@ -38,6 +38,10 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
+app.get('/login',(req, res)=>{
+    res.render('login.ejs')
+})
+
 app.get('/chat', async (req, res) => {
     try {
         const response = await axios.get(`${FAST1}getChat`); 
