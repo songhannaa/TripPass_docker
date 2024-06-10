@@ -5,11 +5,14 @@ FROM node:16.20.2
 RUN apt -y update && apt -y upgrade && apt -y install git net-tools vim
 
 # 작업 디렉토리 설정
-WORKDIR '/root'
+WORKDIR /root
+
+# 기존 디렉토리가 존재하면 삭제
+RUN rm -rf /root/tp
 
 # 의존성 설치
 RUN git clone https://github.com/songhannaa/TripPass_docker tp
-WORKDIR '/root/tp'
+WORKDIR /root/tp
 RUN npm install
 RUN npm install -g nodemon
 
@@ -17,4 +20,4 @@ RUN npm install -g nodemon
 EXPOSE 8000 
 
 # 애플리케이션 시작 명령어
-CMD nodemon /root/tp/app.js
+CMD ["nodemon", "/root/tp/app.js"]
